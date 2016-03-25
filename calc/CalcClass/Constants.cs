@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CalcClass
 {
-    public class Class1
+    class Constants
     {
+        public static string OverflowErrorText = "Error 06";
+        public static string DividingOnNullErrorText = "Error 09";
     }
 }

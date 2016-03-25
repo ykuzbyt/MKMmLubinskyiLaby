@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClass", "CalcClass\Calc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalaizerClass", "AnalaizerClass\AnalaizerClass.csproj", "{25CE250F-6D2E-49D6-A0EF-314864C8FA60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{DEE2B198-1D80-45FB-B818-193A7FA9A4D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{25CE250F-6D2E-49D6-A0EF-314864C8FA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25CE250F-6D2E-49D6-A0EF-314864C8FA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25CE250F-6D2E-49D6-A0EF-314864C8FA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE2B198-1D80-45FB-B818-193A7FA9A4D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE2B198-1D80-45FB-B818-193A7FA9A4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE2B198-1D80-45FB-B818-193A7FA9A4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE2B198-1D80-45FB-B818-193A7FA9A4D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
