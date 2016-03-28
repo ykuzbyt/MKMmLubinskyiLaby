@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="467" Width="944">
-    <Grid>
+        Title="MainWindow" Height="433" Width="394.5">
+    <Grid Margin="0,0,300,-229">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Expression" FontSize="14" Margin="20,10,-20,580" Grid.ColumnSpan="2" />
+        <Label Content="Result" FontSize="14" Margin="20,46,-20,540" Grid.ColumnSpan="2" />
+        <TextBox Name="ExpressionTextBox" Margin="49,10,-279,585" TextChanged="ExpressionTextBox_TextChanged" Grid.Column="1" />
+        <TextBox Name="ResultTextBox" IsEnabled="False" Margin="49,46,-279,549" TextChanged="ResultTextBox_TextChanged" Grid.Column="1" />
+
+        <GroupBox Margin="20,86,-279,455" FontSize="14" FontWeight="Normal"
+                  Background="White" Grid.ColumnSpan="2">
+            <GroupBox.Header >
+                Editing
+            </GroupBox.Header>
+
+            <Grid Margin="0,0,14,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="39*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="(" HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Click="LefBracket_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+                <Button Content=")" HorizontalAlignment="Left"  Margin="55,10,0,0" VerticalAlignment="Top" Width="40" Click="RightBracket_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+                <Button Content="C" Foreground="Red" HorizontalAlignment="Left"  Margin="5,10,0,0" VerticalAlignment="Top" Width="40" Click="C_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.Column="1"/>
+                <Button Content="Backspace"  Foreground="Red" HorizontalAlignment="Left"  Margin="173,10,0,0" VerticalAlignment="Top" Width="87" Click="Backspace_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+
+            </Grid>
+
+        </GroupBox>
+
+
+
+        <Grid Margin="20,189,-279,244" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="39*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="1" HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top" Width="40" Click="_1_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="2" HorizontalAlignment="Left"  Margin="70,10,0,0" VerticalAlignment="Top" Width="40" Click="_2_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="3" HorizontalAlignment="Left"  Margin="130,10,0,0" VerticalAlignment="Top" Width="40" Click="_3_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="4" HorizontalAlignment="Left"  Margin="10,60,0,0" VerticalAlignment="Top" Width="40" Click="_4_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="5" HorizontalAlignment="Left"  Margin="70,60,0,0" VerticalAlignment="Top" Width="40" Click="_5_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="6" HorizontalAlignment="Left"  Margin="130,60,0,0" VerticalAlignment="Top" Width="40" Click="_6_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="7" HorizontalAlignment="Left"  Margin="10,110,0,0" VerticalAlignment="Top" Width="40" Click="_7_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="8" HorizontalAlignment="Left"  Margin="70,110,0,0" VerticalAlignment="Top" Width="40" Click="_8_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+            <Button Content="9" HorizontalAlignment="Left"  Margin="130,110,0,0" VerticalAlignment="Top" Width="40" Click="_9_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548"/>
+
+            <Button Content="/" Foreground="Red"  HorizontalAlignment="Left"  Margin="190,10,0,0" VerticalAlignment="Top" Width="40" Click="Divide_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="*" Foreground="Red" HorizontalAlignment="Left"  Margin="190,60,0,0" VerticalAlignment="Top" Width="40" Click="Multiply_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="-" Foreground="Red" HorizontalAlignment="Left"  Margin="190,110,0,0" VerticalAlignment="Top" Width="40" Click="Substract_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+
+            <Button Content="+/-" HorizontalAlignment="Left"  Margin="10,160,0,0" VerticalAlignment="Top" Width="40" Click="PlusMinus_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="0" HorizontalAlignment="Left"  Margin="70,160,0,0" VerticalAlignment="Top" Width="40" Click="_0_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="mod" Foreground="Red" HorizontalAlignment="Left"  Margin="130,160,0,0" VerticalAlignment="Top" Width="40" Click="Mod_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="+" Foreground="Red"  HorizontalAlignment="Left"  Margin="190,160,0,0" VerticalAlignment="Top" Width="40" Click="Add_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+
+            <Button Content="MR" Foreground="Blue" HorizontalAlignment="Left"  Margin="280,10,0,0" VerticalAlignment="Top" Width="40" Click="MR_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="M+" Foreground="Blue" HorizontalAlignment="Left"  Margin="280,60,0,0" VerticalAlignment="Top" Width="40" Click="MPlus_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="MC" Foreground="Blue" HorizontalAlignment="Left"  Margin="280,110,0,0" VerticalAlignment="Top" Width="40" Click="MC_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+            <Button Content="=" Foreground="Red" HorizontalAlignment="Left"  Margin="280,160,0,0" VerticalAlignment="Top" Width="40" Click="Result_ButtonClick" Height="30" RenderTransformOrigin="-0.017,0.548" Grid.ColumnSpan="2"/>
+        </Grid>
 
     </Grid>
 </Window>
