@@ -12,7 +12,7 @@ namespace AnalaizerClass
         private static int k = 0;
         private static string ss;
 
-
+//some comment 
         private const double MAXINT = 214783648;
         private const double MININT = -214783648;
 
