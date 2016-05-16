@@ -222,6 +222,7 @@ namespace AnalaizerClass
 
         public static string Start(string sss)
         {
+            if (string.IsNullOrWhiteSpace(sss)) return "";
             error = false;
             char[] ex;
             List<char> symb1 = new List<char>(new char[] {'+', '-', '*', '/', '%', 'p', 'm'});
@@ -236,12 +237,33 @@ namespace AnalaizerClass
             string[] b = new string[length];
             string rez;
             string s = Convert.ToString(sss);
+
+
+            var arr = sss.ToCharArray();
+            
+            if (arr[0].CompareTo('0') == 0 && !symb1.Contains(arr[1])) return "error500";
+            
             for (int i = 0; i < length; i++)
             {
-                ex[i] = sss.ToCharArray()[i];
+                
+                ex[i] = arr[i];
             }
             for (int i = 0; i < length; i++)
             {
+                if (i + 1 < length && symb.Contains(ex[i]) && ex[i + 1].CompareTo('0') == 0)
+                {
+                    if (arr[length - 1].CompareTo('0') == 0 && symb1.Contains(arr[length - 2]))
+                    {
+                        continue;
+                    }
+                    if (arr[length - 1].CompareTo(')') == 0 && arr[length - 2].CompareTo('0') == 0)
+                    {
+                        continue;
+                    }
+                        return "error500";
+                }
+                
+
                 if (symb.Contains(ex[i]))
                 {
                     ex_symb[k_symb] = ex[i];
@@ -441,6 +463,8 @@ namespace AnalaizerClass
             Stack<string> steck = new Stack<string>();
 
             List<string> operators = new List<string>(new string[] {"+", "-", "*", "/", "%", "m", "p"});
+
+            #region foreach
             foreach (string ch in a)
             {
                 if (!String.IsNullOrEmpty(ch))
@@ -502,6 +526,7 @@ namespace AnalaizerClass
 
                 }
             }
+            #endregion
             return ss = steck.Peek();
 
         }
