@@ -6,7 +6,9 @@ namespace GitDemo
     {
         public static void Main (string[] args)
         {
-            Console.WriteLine ("Hello World!");
+            var Car = new Car("green");
+            Car.AddPassanger();
+            Car.StartEngine();
         }
     }
 }
