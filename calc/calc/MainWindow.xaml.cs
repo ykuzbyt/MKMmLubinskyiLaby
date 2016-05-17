@@ -156,6 +156,7 @@ namespace calc
         {
             if (ExpressionTextBox.Text.Length > 0) {
                 this.calcMemoryExpression =   "(" + ExpressionTextBox.Text + "+" + this.calcMemoryExpression + ")";
+                this.calcMemoryExpression = CommonUtilities.ProcessResult(this.calcMemoryExpression);
                 ExpressionTextBox.Clear();
             }
             
