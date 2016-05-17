@@ -226,6 +226,8 @@ namespace AnalaizerClass
             error = false;
             char[] ex;
             List<char> symb1 = new List<char>(new char[] {'+', '-', '*', '/', '%', 'p', 'm'});
+
+            List<char> symb2 = new List<char>(new char[] { '+', '*', '/', '%', 'p', 'm' });
             List<char> symb = new List<char>(new char[] {'+', '-', '*', '/', ')', '(', '%', 'p', 'm'});
             char[] ex_symb;
             int length = 0;
@@ -241,7 +243,7 @@ namespace AnalaizerClass
 
             var arr = sss.ToCharArray();
             
-            if (arr[0].CompareTo('0') == 0 && !symb1.Contains(arr[1])) return "error500";
+            if (arr[0].CompareTo('0') == 0 && !symb2.Contains(arr[1])) return "error500";
             
             for (int i = 0; i < length; i++)
             {
@@ -257,6 +259,10 @@ namespace AnalaizerClass
                         continue;
                     }
                     if (arr[length - 1].CompareTo(')') == 0 && arr[length - 2].CompareTo('0') == 0)
+                    {
+                        continue;
+                    }
+                    if (arr[length - 1].CompareTo('(') == 0 && arr[length - 2].CompareTo('0') == 0)
                     {
                         continue;
                     }

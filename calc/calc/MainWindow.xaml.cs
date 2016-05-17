@@ -127,6 +127,7 @@ namespace calc
 
         private void PlusMinus_ButtonClick(object sender, RoutedEventArgs e)
         {
+         
             if (ExpressionTextBox.Text.Length > 0)
                 ExpressionTextBox.Text = "-(" + ExpressionTextBox.Text + ")";
         }
@@ -169,7 +170,13 @@ namespace calc
 
         private void Result_ButtonClick(object sender, RoutedEventArgs e)
         {
-            ResultTextBox.Text = CommonUtilities.ProcessResult(ExpressionTextBox.Text);
+            if (ExpressionTextBox.Text.Contains("-(-(-")) { ResultTextBox.Text = "Invalid input"; return; }
+
+            string text = ExpressionTextBox.Text.Replace("-(-", "(1-1+");
+            text = text.Replace("-(", "-1*(1-1+");
+            text = text.Replace("(", "1*(1-1+");
+            ResultTextBox.Text = CommonUtilities.ProcessResult(text);
+
         }
     }
 }

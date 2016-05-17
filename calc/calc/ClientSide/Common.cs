@@ -13,6 +13,7 @@ namespace calc.ClientSide
         public static string ProcessResult( string expression)
         {
             // Here analaizer class will be called
+           // return Analize.Start(expression);
             try
             {
                 return Analize.Start(expression);
