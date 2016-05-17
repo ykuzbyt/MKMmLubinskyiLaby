@@ -500,8 +500,7 @@ namespace AnalaizerClass
                                     return ss;
                                 }
                                 steck.Push(
-                                    Convert.ToString(
-                                        MathFunctions.Mult(MathFunctions.Div(1, Convert.ToInt64(steck.Pop())),
+                                    Convert.ToString(MathFunctions.Div(Convert.ToInt64(steck.Pop()),
                                             Convert.ToInt64(steck.Pop()))));
                                 break;
                             case "%":

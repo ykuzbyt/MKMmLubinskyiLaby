@@ -109,10 +109,10 @@ namespace CalcClass
             try
             {
                 if (CheckIfNumberIsInInt32Range(a, b)) throw new OverflowException();
-                if (b == 0)
+                if (a == 0)
                     throw new ApplicationException(Constants.DividingOnNullErrorText);
 
-                long result = a/b;
+                long result = b/a;
                 return int.Parse(result.ToString());
             }
             catch (ArgumentException)
